@@ -1,1 +1,1142 @@
-mm
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f0ff">
+  <meta name="description" content="JetKeyboard User Guide — layouts, typing tools, shortcuts, and customization for Amharic, English & Arabic.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>JetKeyboard · User Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════════════════
+       Material 3 Expressive Design System — Nov 2026
+       ═══════════════════════════════════════════════════════ */
+
+    :root {
+      color-scheme: light;
+      /* M3 Expressive – Light Palette */
+      --md-primary: #6750A4;
+      --md-on-primary: #FFFFFF;
+      --md-primary-container: #EADDFF;
+      --md-on-primary-container: #21005D;
+      --md-secondary: #625B71;
+      --md-on-secondary: #FFFFFF;
+      --md-secondary-container: #E8DEF8;
+      --md-on-secondary-container: #1D192B;
+      --md-tertiary: #7D5260;
+      --md-tertiary-container: #FFD8E4;
+      --md-surface: #FEF7FF;
+      --md-surface-dim: #DED8E1;
+      --md-surface-bright: #FEF7FF;
+      --md-surface-container-lowest: #FFFFFF;
+      --md-surface-container-low: #F7F2FA;
+      --md-surface-container: #F3EDF7;
+      --md-surface-container-high: #ECE6F0;
+      --md-surface-container-highest: #E6E0E9;
+      --md-on-surface: #1D1B20;
+      --md-on-surface-variant: #49454F;
+      --md-outline: #79747E;
+      --md-outline-variant: #CAC4D0;
+      --md-inverse-surface: #322F35;
+      --md-inverse-on-surface: #F5EFF7;
+      --md-inverse-primary: #D0BCFF;
+      --md-error: #B3261E;
+      --md-shadow: 0 1px 3px rgba(0,0,0,.1), 0 4px 12px rgba(0,0,0,.06);
+      --md-shadow-elevated: 0 2px 6px rgba(0,0,0,.12), 0 8px 24px rgba(0,0,0,.08);
+      --md-shadow-hero: 0 8px 40px rgba(103,80,164,.12), 0 2px 12px rgba(0,0,0,.06);
+      --md-radius-xs: 8px;
+      --md-radius-sm: 12px;
+      --md-radius-md: 16px;
+      --md-radius-lg: 28px;
+      --md-radius-xl: 32px;
+      --md-radius-full: 9999px;
+      /* Expressive accents */
+      --glow-primary: rgba(103,80,164,.08);
+      --glow-tertiary: rgba(125,82,96,.06);
+      --chip-active-bg: var(--md-secondary-container);
+      --chip-active-text: var(--md-on-secondary-container);
+      --hero-gradient: linear-gradient(145deg, #f3edf7 0%, #e8def8 50%, #ffd8e4 100%);
+      --card-hover-lift: translateY(-3px);
+      --transition-standard: .2s cubic-bezier(.2,0,0,1);
+      --transition-emphasized: .35s cubic-bezier(.05,.7,.1,1);
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      /* Stunning Charcoal — warm purple-tinted dark */
+      --md-primary: #CBBAFF;
+      --md-on-primary: #33206E;
+      --md-primary-container: #483878;
+      --md-on-primary-container: #E8DEFF;
+      --md-secondary: #C8BFDA;
+      --md-on-secondary: #302A3E;
+      --md-secondary-container: #433D52;
+      --md-on-secondary-container: #E4DCF4;
+      --md-tertiary: #E8B4C4;
+      --md-tertiary-container: #5A3444;
+      --md-surface: #18161D;
+      --md-surface-dim: #18161D;
+      --md-surface-bright: #3E3A46;
+      --md-surface-container-lowest: #121017;
+      --md-surface-container-low: #201E26;
+      --md-surface-container: #26232D;
+      --md-surface-container-high: #312E38;
+      --md-surface-container-highest: #3D3944;
+      --md-on-surface: #ECEAF2;
+      --md-on-surface-variant: #CDC7D4;
+      --md-outline: #968FA0;
+      --md-outline-variant: #4A4554;
+      --md-inverse-surface: #ECEAF2;
+      --md-inverse-on-surface: #312E38;
+      --md-inverse-primary: #6750A4;
+      --md-error: #F2B8B5;
+      --md-shadow: 0 1px 4px rgba(0,0,0,.35), 0 6px 18px rgba(0,0,0,.2);
+      --md-shadow-elevated: 0 3px 8px rgba(0,0,0,.4), 0 10px 28px rgba(0,0,0,.24);
+      --md-shadow-hero: 0 8px 36px rgba(0,0,0,.32), 0 2px 10px rgba(0,0,0,.16);
+      --glow-primary: rgba(203,186,255,.07);
+      --glow-tertiary: rgba(232,180,196,.04);
+      --chip-active-bg: var(--md-secondary-container);
+      --chip-active-text: var(--md-on-secondary-container);
+      --hero-gradient: linear-gradient(145deg, #201e26 0%, #312e38 50%, #3a2e42 100%);
+    }
+
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      min-width: 320px;
+      background:
+        radial-gradient(ellipse at 75% -5%, var(--glow-primary), transparent 36rem),
+        radial-gradient(ellipse at -8% 50%, var(--glow-tertiary), transparent 32rem),
+        var(--md-surface);
+      color: var(--md-on-surface);
+      line-height: 1.6;
+      transition: background-color var(--transition-standard), color var(--transition-standard);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    button, input { font: inherit; border: none; background: none; }
+    button { color: inherit; cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Layout Shell ── */
+    .shell { width: min(1140px, calc(100% - 2rem)); margin: 0 auto; }
+
+    @media (min-width: 769px) {
+      .shell { width: min(1140px, calc(100% - 3rem)); }
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       Top App Bar (M3 Center-aligned / Small)
+       ═══════════════════════════════════════════════════════ */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: color-mix(in srgb, var(--md-surface) 85%, transparent);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--md-outline-variant);
+      transition: background var(--transition-standard);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+      gap: 12px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -.01em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px; height: 38px;
+      border-radius: var(--md-radius-sm);
+      background: linear-gradient(145deg, var(--md-primary), var(--md-tertiary));
+      color: var(--md-on-primary);
+      font-size: 18px;
+      font-weight: 900;
+      box-shadow: 0 4px 16px rgba(103,80,164,.25);
+    }
+
+    .topbar-brand-wrap { display: flex; align-items: center; gap: 12px; }
+    .web-domain-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: var(--md-radius-full);
+      background: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--md-primary);
+      text-decoration: none;
+      transition: all var(--transition-standard);
+    }
+    .web-domain-pill:hover {
+      background: var(--md-surface-container-high);
+      border-color: var(--md-primary);
+    }
+    .domain-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 6px rgba(34,197,94,.5);
+    }
+    .hero-badges { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: .25rem; }
+    .hero-web-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: var(--md-radius-full);
+      background: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      color: var(--md-on-surface);
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all var(--transition-standard);
+    }
+    .hero-web-link:hover {
+      background: var(--md-surface-container-high);
+      border-color: var(--md-primary);
+      transform: translateY(-1px);
+    }
+    .hero-web-badge {
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: var(--md-primary);
+      color: var(--md-on-primary);
+      letter-spacing: .04em;
+    }
+    .hero-web-url { color: var(--md-primary); font-weight: 700; }
+    .hero-web-mirror { color: var(--md-on-surface-variant); font-size: 10px; }
+    .hero-web-arrow { font-size: 11px; color: var(--md-primary); }
+
+    .brand-label { color: var(--md-on-surface); }
+    .brand-sub { color: var(--md-on-surface-variant); font-weight: 500; }
+
+    .top-actions { display: flex; align-items: center; gap: 8px; }
+
+    /* Theme toggle button */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px; height: 44px;
+      border-radius: var(--md-radius-full);
+      background: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      font-size: 18px;
+      cursor: pointer;
+      transition: all var(--transition-standard);
+      position: relative;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .theme-toggle:hover {
+      background: var(--md-surface-container-high);
+      box-shadow: var(--md-shadow);
+    }
+
+    .theme-toggle:active { transform: scale(.92); }
+
+    .theme-toggle-icon {
+      display: block;
+      line-height: 1;
+      transition: transform .4s cubic-bezier(.34,1.56,.64,1), opacity .2s ease;
+    }
+
+    :root[data-theme="dark"] .theme-toggle-icon { transform: rotate(360deg); }
+
+    /* ═══════════════════════════════════════════════════════
+       Hero Section — M3 Expressive Header
+       ═══════════════════════════════════════════════════════ */
+    .hero {
+      padding: 4rem 0 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--md-radius-full);
+      background: var(--md-primary-container);
+      color: var(--md-on-primary-container);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      margin: 1rem 0 .75rem;
+      font-size: clamp(2.25rem, 6vw, 3.75rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      color: var(--md-on-surface);
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(100deg, var(--md-primary) 15%, var(--md-tertiary) 85%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      max-width: 560px;
+      color: var(--md-on-surface-variant);
+      font-size: clamp(.9rem, 1.8vw, 1.1rem);
+      line-height: 1.65;
+    }
+
+    /* Quick Stats Row */
+    .hero-stats {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: var(--md-radius-full);
+      background: var(--md-surface-container);
+      border: 1px solid var(--md-outline-variant);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--md-on-surface);
+      transition: all var(--transition-standard);
+    }
+
+    .stat-chip:hover {
+      background: var(--md-surface-container-high);
+      transform: translateY(-1px);
+    }
+
+    .stat-chip-icon { font-size: 16px; }
+
+    /* Hero Aside Card */
+    .hero-card {
+      padding: 1.5rem;
+      border-radius: var(--md-radius-lg);
+      background: var(--hero-gradient);
+      border: 1px solid var(--md-outline-variant);
+      box-shadow: var(--md-shadow-hero);
+    }
+
+    .hero-card-icon { font-size: 2rem; margin-bottom: .5rem; }
+    .hero-card-title { font-size: 1rem; font-weight: 700; margin-bottom: .25rem; }
+    .hero-card-desc { color: var(--md-on-surface-variant); font-size: .8rem; line-height: 1.6; }
+
+    /* ═══════════════════════════════════════════════════════
+       Guide Layout — Sidebar + Content
+       ═══════════════════════════════════════════════════════ */
+    .guide-layout {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      align-items: start;
+      gap: 1.5rem;
+      padding: 1.5rem 0 5rem;
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      position: sticky;
+      top: 80px;
+      padding: 1rem;
+      border-radius: var(--md-radius-lg);
+      background: color-mix(in srgb, var(--md-surface-container-low) 80%, transparent);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--md-outline-variant);
+    }
+
+    .sidebar-label {
+      padding: 0 .5rem;
+      margin-bottom: .75rem;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--md-outline);
+    }
+
+    .nav-list { display: grid; gap: 3px; }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: var(--md-radius-md);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--md-on-surface-variant);
+      text-align: left;
+      transition: all var(--transition-standard);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: var(--md-primary);
+      opacity: 0;
+      transition: opacity var(--transition-standard);
+    }
+
+    .nav-btn:hover::before { opacity: .06; }
+
+    .nav-btn[aria-current="true"] {
+      background: var(--chip-active-bg);
+      color: var(--chip-active-text);
+      font-weight: 600;
+    }
+
+    .nav-btn[aria-current="true"]::before { opacity: 0; }
+
+    .nav-icon { width: 22px; text-align: center; font-size: 16px; flex-shrink: 0; position: relative; z-index: 1; }
+    .nav-label { position: relative; z-index: 1; }
+
+    /* Content Area */
+    .content { min-width: 0; }
+
+    /* Search — M3 Search bar */
+    .search-wrap {
+      position: relative;
+      margin-bottom: 1.25rem;
+    }
+
+    .search-icon {
+      position: absolute;
+      top: 50%; left: 1rem;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: var(--md-outline);
+      pointer-events: none;
+    }
+
+    .search {
+      width: 100%;
+      min-height: 52px;
+      padding: 0 3rem 0 2.75rem;
+      border-radius: var(--md-radius-lg);
+      border: 1px solid var(--md-outline-variant);
+      background: var(--md-surface-container-low);
+      color: var(--md-on-surface);
+      font-size: 14px;
+      outline: none;
+      transition: all var(--transition-standard);
+    }
+
+    .search::placeholder { color: var(--md-outline); }
+    .search:focus {
+      border-color: var(--md-primary);
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--md-primary) 25%, transparent);
+      background: var(--md-surface-container-lowest);
+    }
+
+    .search-hint {
+      position: absolute;
+      top: 50%; right: .75rem;
+      transform: translateY(-50%);
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: var(--md-surface-container-high);
+      color: var(--md-outline);
+      font-size: 10px;
+      font-weight: 600;
+      pointer-events: none;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       Section Headings
+       ═══════════════════════════════════════════════════════ */
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 2rem 0 1rem;
+      scroll-margin-top: 80px;
+    }
+
+    .section-heading h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: var(--md-on-surface);
+    }
+
+    .section-heading .section-desc {
+      margin-top: 2px;
+      font-size: .75rem;
+      color: var(--md-on-surface-variant);
+    }
+
+    .count-badge {
+      flex-shrink: 0;
+      padding: 4px 10px;
+      border-radius: var(--md-radius-full);
+      background: var(--md-surface-container-high);
+      color: var(--md-on-surface-variant);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       Guide Cards — M3 Filled Card style
+       ═══════════════════════════════════════════════════════ */
+    .cards { display: grid; gap: .625rem; }
+
+    .guide-card {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: .875rem;
+      padding: 1rem 1.125rem;
+      border-radius: var(--md-radius-md);
+      background: var(--md-surface-container-low);
+      border: 1px solid var(--md-outline-variant);
+      transition: transform var(--transition-emphasized),
+                  border-color var(--transition-standard),
+                  box-shadow var(--transition-emphasized),
+                  background var(--transition-standard);
+      cursor: default;
+    }
+
+    .guide-card:hover {
+      transform: var(--card-hover-lift);
+      border-color: color-mix(in srgb, var(--md-primary) 40%, var(--md-outline-variant));
+      box-shadow: var(--md-shadow-elevated);
+      background: var(--md-surface-container);
+    }
+
+    .card-icon {
+      display: grid;
+      place-items: center;
+      width: 40px; height: 40px;
+      border-radius: var(--md-radius-sm);
+      background: var(--md-primary-container);
+      color: var(--md-on-primary-container);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .guide-card h3 {
+      font-size: .875rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      margin-bottom: 3px;
+      color: var(--md-on-surface);
+    }
+
+    .guide-card p {
+      font-size: .8rem;
+      line-height: 1.7;
+      color: var(--md-on-surface-variant);
+    }
+
+    /* Animated illustrative media */
+    .guide-media-wrap {
+      margin-top: .875rem;
+      border-radius: var(--md-radius-md);
+      overflow: hidden;
+      border: 1px solid var(--md-outline-variant);
+      background: var(--md-surface-container-lowest);
+      box-shadow: var(--md-shadow);
+      max-width: 620px;
+    }
+
+    .guide-media-gif {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 760 / 560;
+      object-fit: cover;
+      background: var(--md-surface-container);
+    }
+
+    .guide-media-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--md-on-surface-variant);
+      background: var(--md-surface-container);
+      border-top: 1px solid var(--md-outline-variant);
+    }
+
+    .guide-media-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--md-primary);
+      font-weight: 700;
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .guide-feature-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: .75rem;
+    }
+
+    .feature-chip-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: var(--md-radius-full);
+      background: var(--md-surface-container-high);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--md-on-surface);
+      border: 1px solid var(--md-outline-variant);
+    }
+
+    .guide-card[hidden], .section[hidden] { display: none; }
+
+    /* Search highlight */
+    mark {
+      border-radius: 3px;
+      background: color-mix(in srgb, var(--md-tertiary-container) 60%, transparent);
+      color: var(--md-on-surface);
+      padding: 0 2px;
+    }
+
+    /* Empty state */
+    .empty-state {
+      padding: 3rem 1.5rem;
+      border-radius: var(--md-radius-lg);
+      border: 2px dashed var(--md-outline-variant);
+      color: var(--md-on-surface-variant);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    .empty-state-icon { font-size: 2.5rem; margin-bottom: .75rem; }
+
+    /* ═══════════════════════════════════════════════════════
+       Footer
+       ═══════════════════════════════════════════════════════ */
+    .footer {
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--md-outline-variant);
+      text-align: center;
+      font-size: .75rem;
+      color: var(--md-outline);
+    }
+
+    .footer strong { color: var(--md-on-surface-variant); }
+    .footer a { color: var(--md-primary); }
+
+    /* ═══════════════════════════════════════════════════════
+       Focus ring (accessibility)
+       ═══════════════════════════════════════════════════════ */
+    :focus-visible {
+      outline: 2px solid var(--md-primary);
+      outline-offset: 2px;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       Scroll to Top FAB
+       ═══════════════════════════════════════════════════════ */
+    .scroll-top-fab {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      z-index: 40;
+      width: 48px; height: 48px;
+      border-radius: var(--md-radius-md);
+      background: var(--md-primary-container);
+      color: var(--md-on-primary-container);
+      font-size: 20px;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--md-shadow-elevated);
+      opacity: 0;
+      transform: translateY(16px) scale(.9);
+      pointer-events: none;
+      transition: opacity var(--transition-standard), transform var(--transition-emphasized);
+    }
+
+    .scroll-top-fab.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .scroll-top-fab:hover {
+      box-shadow: var(--md-shadow-hero);
+      background: color-mix(in srgb, var(--md-primary-container) 85%, var(--md-primary));
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       RESPONSIVE — Tablet (≤900px)
+       ═══════════════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 1.5rem; padding: 3rem 0 1.5rem; }
+      .hero-card { display: none; }
+      .guide-layout { grid-template-columns: 1fr; gap: 1rem; }
+      .sidebar {
+        position: static;
+        padding: .625rem;
+        border-radius: var(--md-radius-md);
+      }
+      .sidebar-label { display: none; }
+      .nav-list {
+        display: flex;
+        overflow-x: auto;
+        gap: 6px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 2px;
+      }
+      .nav-list::-webkit-scrollbar { display: none; }
+      .nav-btn {
+        flex: 0 0 auto;
+        padding: 8px 14px;
+        white-space: nowrap;
+        scroll-snap-align: start;
+        border-radius: var(--md-radius-full);
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       RESPONSIVE — Phone (≤480px)
+       ═══════════════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .shell { width: calc(100% - 1.25rem); }
+      .topbar-inner { min-height: 56px; }
+      .brand { font-size: 14px; gap: 8px; }
+      .brand-mark { width: 32px; height: 32px; font-size: 15px; border-radius: 10px; }
+      .web-domain-pill { display: none; }
+      .hero-web-mirror { display: none; }
+      .theme-toggle { width: 38px; height: 38px; font-size: 16px; }
+      .hero { padding: 2rem 0 1.25rem; }
+      .hero-title { font-size: 2rem; }
+      .hero-subtitle { font-size: .85rem; }
+      .hero-stats { gap: .625rem; }
+      .stat-chip { padding: 6px 10px; font-size: 12px; }
+      .guide-card {
+        grid-template-columns: 36px minmax(0,1fr);
+        gap: .625rem;
+        padding: .875rem;
+      }
+      .card-icon { width: 34px; height: 34px; font-size: 15px; border-radius: 10px; }
+      .guide-card h3 { font-size: .82rem; }
+      .guide-card p { font-size: .76rem; }
+      .search { min-height: 46px; padding: 0 2.5rem 0 2.5rem; font-size: 13px; border-radius: var(--md-radius-md); }
+      .search-icon { left: .75rem; font-size: 16px; }
+      .search-hint { display: none; }
+      .section-heading h2 { font-size: 1.1rem; }
+      .scroll-top-fab { width: 44px; height: 44px; bottom: 1rem; right: 1rem; }
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       RESPONSIVE — Small Phone (≤360px)
+       ═══════════════════════════════════════════════════════ */
+    @media (max-width: 360px) {
+      .hero-title { font-size: 1.7rem; }
+      .stat-chip { font-size: 11px; padding: 5px 8px; }
+      .nav-btn { padding: 7px 10px; font-size: 12px; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+
+    /* Safe area for notched phones */
+    @supports (padding: env(safe-area-inset-bottom)) {
+      .footer { padding-bottom: calc(1.5rem + env(safe-area-inset-bottom)); }
+      .scroll-top-fab { bottom: calc(1.5rem + env(safe-area-inset-bottom)); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ Top App Bar ═══ -->
+  <header class="topbar">
+    <div class="topbar-inner shell">
+      <div class="topbar-brand-wrap">
+        <a class="brand" href="#" aria-label="JetKeyboard Guide home">
+          <span class="brand-mark" aria-hidden="true">J</span>
+          <span><span class="brand-label">JetKeyboard</span> <span class="brand-sub">Guide</span></span>
+        </a>
+        <a class="web-domain-pill" href="https://jetkb.github.io" target="_blank" rel="noopener" title="Official Web Guide: jetkb.github.io">
+          <span class="domain-dot"></span>
+          <span>jetkb.github.io</span>
+        </a>
+      </div>
+      <div class="top-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" title="Toggle theme">
+          <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <!-- ═══ Guide ═══ -->
+    <section class="guide-layout" id="guide" aria-label="Keyboard user guide">
+      <nav class="sidebar" aria-label="Guide categories">
+        <p class="sidebar-label">Browse guide</p>
+        <div class="nav-list" id="category-nav">
+          <button class="nav-btn" type="button" data-category="all" aria-current="true">
+            <span class="nav-icon">✦</span><span class="nav-label">All topics</span>
+          </button>
+          <button class="nav-btn" type="button" data-category="tools">
+            <span class="nav-icon">⚙</span><span class="nav-label">Tools & tips</span>
+          </button>
+          <button class="nav-btn" type="button" data-category="english">
+            <span class="nav-icon">A</span><span class="nav-label">English</span>
+          </button>
+          <button class="nav-btn" type="button" data-category="amharic">
+            <span class="nav-icon">ሀ</span><span class="nav-label">Amharic</span>
+          </button>
+          <button class="nav-btn" type="button" data-category="arabic">
+            <span class="nav-icon">ع</span><span class="nav-label">Arabic</span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="content">
+        <label class="search-wrap">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input class="search" id="guide-search" type="search" placeholder="Search layouts, shortcuts, gestures…" autocomplete="off" aria-label="Search the user guide">
+          <span class="search-hint" aria-hidden="true">Ctrl+K</span>
+        </label>
+        <div id="guide-sections" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <div class="empty-state-icon" aria-hidden="true">🔍</div>
+          No guide topics match that search.<br>Try another word or browse a category.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scroll-to-top FAB -->
+  <button class="scroll-top-fab" id="scroll-top" type="button" aria-label="Scroll to top" title="Back to top">↑</button>
+
+  <footer class="footer">
+    <div class="shell"><strong>JetKeyboard</strong> · A smoother typing experience · <a href="https://jetkb.github.io" target="_blank" rel="noopener">jetkb.github.io</a></div>
+  </footer>
+
+  <script>
+    /* ═══════════════════════════════════════════════════════
+       Guide Data — mirrors in-app KeyboardLayoutGuide.kt
+       ═══════════════════════════════════════════════════════ */
+    const guide = [
+      {
+        id: "tools",
+        title: "Tools & Tips",
+        icon: "⚙",
+        topics: [
+          ["Switch language and layout", "Use the keyboard's language and layout controls to switch between English and Arabic or choose another layout for the active language."],
+          ["Quick toolbar", "The default quick toolbar includes Keyboard Appearance, Keyboard Background, Create shortcut, Gregorian calendar, Symbols, Emoji, and Settings. Open the extended toolbar and choose Edit to customize the actions shown."],
+          ["Toolbar tool options", "Long-press a tool icon in the quick toolbar or tools panel to open its options. Add or remove the tool from the Quick Toolbar, choose Don't Show to hide it from both places, or reset the toolbar to its default tools and order. Keyboard Appearance is required and cannot be removed or hidden."],
+          ["Google Search", "Choose Google Search from the extended toolbar to search selected text, or the current word if no text is selected. If there is no text to search, it opens Google."],
+          ["Symbols and emoji", "The Symbols toolbar action opens the emoji picker on its Symbols tab; Emoji opens it on the Emoji tab. The picker also includes emoticons and kaomoji. Number and symbol keyboard layouts provide digits and punctuation."],
+          ["Calendars and shortcuts", "Use the Gregorian calendar toolbar action to insert a date. Create shortcut opens shortcut mode for typing saved text expansions. When your current word exactly matches a saved shortcut (case-insensitive), an EXPAND hint appears in the suggestion bar; tap it to replace the shortcut with its expansion. Shortcuts are saved, and pressing Space also expands a matching shortcut."],
+          ["Word suggestions", "Tap a suggestion above the keys to replace the word you are typing. Use the arrow at the end of the suggestion strip to open or collapse the expanded suggestions panel. Suggestions and emoji suggestions can be adjusted in typing settings."],
+          ["Personalize", "Use the toolbar or keyboard settings to adjust themes, fonts, key appearance, and keyboard background. Fancy fonts are supported for English layouts."],
+          ["Swipe the English and Arabic top row", "Swipe horizontally across the top row to switch between its available modes, such as the number row and recent emojis. Choose the default top-row mode in Settings > Typing; the top-row height can also be adjusted there."],
+          ["Bottom row", "Customize the bottom row in Settings > Bottom Row: choose a preset, show or hide keys such as comma and period, or configure a custom key."],
+          ["Press and hold keys", "Some keys offer alternate characters or actions when pressed and held. Follow the small key hints where shown, and release on the character you want."],
+          ["Availability", "This guide covers the English and Arabic keyboards currently available in the app. Optional tools may be hidden when their feature is disabled."]
+        ]
+      },
+      {
+        id: "english",
+        title: "English",
+        icon: "A",
+        topics: [
+          ["QWERTY and QWERTZ", "Choose the standard QWERTY layout or QWERTZ, which swaps the Y and Z key positions. Change the layout from the keyboard's layout controls or settings."],
+          ["English typing tools", "Fancy fonts are available for English. Swipe typing can be enabled or disabled from the keyboard toolbar."]
+        ]
+      },
+      {
+        id: "amharic",
+        title: "Amharic · አማርኛ",
+        icon: "ሀ",
+        topics: [
+          ["Layout 1 · Classic Simple · ሀለሐመ", "Tap a consonant to show its vowel forms in the top row, then tap a form to type it. When the variation row is open, use its leftmost switch key to move to the related sister-consonant family, or tap ፣ to finish and return to punctuation."],
+          ["Customize the Amharic top row", "With the punctuation row showing in Layout 1, long-press one of its seven punctuation keys to change that slot. The punctuation switch key (⇄) changes between Ethiopic and modern punctuation pages; each page can be customized separately."],
+          ["Layout 7 · Phonetic En2 · En2ቅውርት", "Latin-based phonetic input where letter keys show Sadis (6th-order) hints. Type a base consonant followed by vowels (a, e, i, o, u) to compose orders (e.g. k + a = ካ). Custom key mappings and vowel shortcuts can be configured in Amharic Fidel Mapping settings."]
+        ]
+      },
+      {
+        id: "arabic",
+        title: "Arabic · العربية",
+        icon: "ع",
+        topics: [
+          ["Saudi 101 Arabic", "The standard Arabic layout. Press and hold keys that show alternatives to access additional characters."],
+          ["Phonetic Arabic", "Type using Latin-key positions to enter Arabic characters."],
+          ["FynLook", "A compact 11-key Arabic layout without a Shift key. Use the displayed key alternatives to enter additional characters."],
+          ["Phonetic QWERTY", "A QWERTY-style layout with Arabic hints on the keys."]
+        ]
+      }
+    ];
+
+    /* ── Card icons (cycled) ── */
+    const cardIcons = ["⌨️", "↔️", "✋", "✦", "🔍", "☺️", "↗", "💡", "🎨", "⇄", "＋", "⏱", "🔧", "📝", "🌐", "⚡"];
+
+    /* ── DOM refs ── */
+    const sectionsRoot = document.getElementById("guide-sections");
+    const searchInput = document.getElementById("guide-search");
+    const emptyState = document.getElementById("empty-state");
+    const scrollTopBtn = document.getElementById("scroll-top");
+    let activeCategory = "all";
+
+    /* ═══ Theme Switching (Smart Single Toggle: Light ↔ Alluring Charcoal Dark) ═══ */
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const themeToggleIcon = themeToggleBtn.querySelector(".theme-toggle-icon");
+
+    function setTheme(theme, persist = false) {
+      const isDark = theme === "dark";
+      const selectedTheme = isDark ? "dark" : "light";
+      document.documentElement.dataset.theme = selectedTheme;
+      
+      themeToggleIcon.textContent = isDark ? "☀" : "☾";
+      const label = isDark ? "Switch to light theme" : "Switch to dark theme";
+      themeToggleBtn.setAttribute("aria-label", label);
+      themeToggleBtn.setAttribute("title", label);
+      
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      if (metaTheme) {
+        metaTheme.content = isDark ? "#18161D" : "#f5f0ff";
+      }
+
+      if (persist) {
+        try { localStorage.setItem("jetkeyboard-guide-theme", selectedTheme); } catch {}
+      }
+    }
+
+    let savedTheme = "light";
+    try { savedTheme = localStorage.getItem("jetkeyboard-guide-theme") || ""; } catch {}
+    if (!savedTheme) {
+      savedTheme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    setTheme(savedTheme);
+
+    themeToggleBtn.addEventListener("click", () => {
+      const current = document.documentElement.dataset.theme;
+      setTheme(current === "dark" ? "light" : "dark", true);
+    });
+
+    /* ═══ Render Guide ═══ */
+    function renderGuide() {
+      sectionsRoot.replaceChildren();
+      guide.forEach((section, si) => {
+        const el = document.createElement("section");
+        el.className = "section";
+        el.dataset.category = section.id;
+
+        // Heading
+        const hd = document.createElement("div");
+        hd.className = "section-heading";
+        hd.id = "section-" + section.id;
+        const hdText = document.createElement("div");
+        const h2 = document.createElement("h2");
+        h2.textContent = section.title;
+        const desc = document.createElement("p");
+        desc.className = "section-desc";
+        desc.textContent = section.id === "tools"
+          ? "Everyday features and helpful keyboard tips"
+          : "Layouts and tips for " + section.title;
+        hdText.append(h2, desc);
+        const badge = document.createElement("span");
+        badge.className = "count-badge";
+        badge.textContent = section.topics.length + (section.topics.length === 1 ? " tip" : " tips");
+        hd.append(hdText, badge);
+
+        // Cards
+        const cards = document.createElement("div");
+        cards.className = "cards";
+        section.topics.forEach(([title, body], ti) => {
+          const card = document.createElement("article");
+          card.className = "guide-card";
+          card.dataset.search = (section.title + " " + title + " " + body).toLocaleLowerCase();
+
+          const icon = document.createElement("span");
+          icon.className = "card-icon";
+          icon.setAttribute("aria-hidden", "true");
+          icon.textContent = cardIcons[(si * 4 + ti) % cardIcons.length];
+
+          const text = document.createElement("div");
+          const h3 = document.createElement("h3");
+          h3.textContent = title;
+          const p = document.createElement("p");
+          p.textContent = body;
+          text.append(h3, p);
+
+          if (title === "Toolbar tool options") {
+            const mediaWrap = document.createElement("div");
+            mediaWrap.className = "guide-media-wrap";
+
+            const img = document.createElement("img");
+            img.className = "guide-media-gif";
+            img.src = "images/toolbar-longpress-context-menu.gif";
+            img.alt = "Animated guide: Long-press toolbar icon to open context menu and select options";
+            img.loading = "lazy";
+
+            const caption = document.createElement("div");
+            caption.className = "guide-media-caption";
+            caption.innerHTML = '<span class="guide-media-badge"><span aria-hidden="true">✦</span> Animated Guide</span><span>Hold icon → Context Menu Actions</span>';
+
+            mediaWrap.append(img, caption);
+            text.append(mediaWrap);
+
+            const chips = document.createElement("div");
+            chips.className = "guide-feature-chips";
+            chips.innerHTML = `
+              <span class="feature-chip-item"><span aria-hidden="true">👆</span> Long-press any icon</span>
+              <span class="feature-chip-item"><span aria-hidden="true">🗑️</span> Remove from Quick Bar</span>
+              <span class="feature-chip-item"><span aria-hidden="true">🚫</span> Don't Show</span>
+              <span class="feature-chip-item"><span aria-hidden="true">🔄</span> Reset to Default</span>
+            `;
+            text.append(chips);
+          }
+
+          card.append(icon, text);
+          cards.append(card);
+        });
+
+        el.append(hd, cards);
+        sectionsRoot.append(el);
+      });
+      filterGuide();
+    }
+
+    /* ═══ Filter (category + search) ═══ */
+    function filterGuide() {
+      const q = searchInput.value.trim().toLocaleLowerCase();
+      let total = 0;
+      document.querySelectorAll(".section").forEach(sec => {
+        const catOk = activeCategory === "all" || sec.dataset.category === activeCategory;
+        let vis = 0;
+        sec.querySelectorAll(".guide-card").forEach(card => {
+          const ok = catOk && (!q || card.dataset.search.includes(q));
+          card.hidden = !ok;
+          if (ok) vis++;
+        });
+        sec.hidden = vis === 0;
+        total += vis;
+        const badge = sec.querySelector(".count-badge");
+        if (badge) badge.textContent = vis + (vis === 1 ? " tip" : " tips");
+      });
+      emptyState.hidden = total !== 0;
+    }
+
+    /* ═══ Category Nav ═══ */
+    document.getElementById("category-nav").addEventListener("click", e => {
+      const btn = e.target.closest("button[data-category]");
+      if (!btn) return;
+      activeCategory = btn.dataset.category;
+      document.querySelectorAll(".nav-btn").forEach(b => {
+        b.setAttribute("aria-current", String(b === btn));
+      });
+      filterGuide();
+      if (activeCategory !== "all" && !searchInput.value.trim()) {
+        document.getElementById("section-" + activeCategory)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+
+    /* ═══ Search ═══ */
+    searchInput.addEventListener("input", filterGuide);
+
+    /* ═══ Keyboard shortcuts ═══ */
+    document.addEventListener("keydown", e => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        searchInput.focus();
+      }
+      if (e.key === "Escape" && document.activeElement === searchInput) {
+        searchInput.value = "";
+        filterGuide();
+        searchInput.blur();
+      }
+    });
+
+    /* ═══ Scroll-to-top FAB ═══ */
+    function updateFab() {
+      scrollTopBtn.classList.toggle("visible", window.scrollY > 400);
+    }
+    let fabTick = false;
+    window.addEventListener("scroll", () => {
+      if (!fabTick) {
+        fabTick = true;
+        requestAnimationFrame(() => { updateFab(); fabTick = false; });
+      }
+    }, { passive: true });
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    /* ═══ Touch: active state for cards on mobile ═══ */
+    if ("ontouchstart" in window) {
+      document.addEventListener("touchstart", e => {
+        const card = e.target.closest(".guide-card");
+        if (card) card.style.transform = "scale(.985)";
+      }, { passive: true });
+      document.addEventListener("touchend", () => {
+        document.querySelectorAll(".guide-card").forEach(c => c.style.transform = "");
+      }, { passive: true });
+    }
+
+    /* ═══ Boot ═══ */
+    renderGuide();
+    updateFab();
+  </script>
+</body>
+</html>
